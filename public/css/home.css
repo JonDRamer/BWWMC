@@ -74,8 +74,9 @@ section {
 }
 
 .imgsize {
-  width: 520px;
-  height: 400px;
+  /*width: 520px;
+  height: 400px;*/
+  width: 40vw;
 }
 
 .opaque {
