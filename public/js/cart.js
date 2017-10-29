@@ -1,18 +1,22 @@
-"use strict";
-
-
 $(document)
     .ready(() => {
+        "use strict";
+
+        // Adds quantity property to each item
         let items = JSON.parse(localStorage.items).menuItems;
         items.forEach((item) => {
           item.quantity = null;
         });
 
+        // Checks localStorage for order info.  If an order exists it stores
+        // it locally.  If no order data exists it sets it to an empty array
         let order = localStorage.cart === undefined ? [] : (localStorage.cart === "undefined" ? [] : JSON.parse(localStorage.cart));
 
         let cartCount = null;
         let subTotal = "$0.00";
 
+        // Creates a local copy of each item object to be used for order
+        // population
         let chickenPotPie = items.filter((item) => {
           return item.item_name === "Chicken Pot Pie";
         })[0];
@@ -34,6 +38,7 @@ $(document)
 
         updateCart();
 
+        // Adds items to the cart based on which item the user clicks
         $('.addToCart')
             .click((e) => {
                 if (e.target.id === "1") {
@@ -198,6 +203,7 @@ $(document)
                 }
             });
 
+        // Loops through the order and updates the cart quantity text
         function updateCartQuantity() {
           let sum = null;
           for (let i = 0; i < order.length; i++) {
@@ -208,6 +214,9 @@ $(document)
               .text(cartCount);
           orderSubTotal();
         }
+
+        // Loops through the cart and totals each item.  Appends
+        // that total to the cart modal
         function orderSubTotal() {
           $('#subTotal').append(`<td>$${subTotal}</td>`)
           let sum = 0;
@@ -226,7 +235,8 @@ $(document)
           localStorage.subTotal = JSON.stringify(subTotal);
         }
 
-
+        // Checks the order object and creates a table in the cart modal
+        // that reflects each item in the order
         function updateCart() {
           order.forEach((item) => {
             $('#cart').append(`<tr id=${item.item_name.split(' ').join('')}><td class="item">${item.item_name}</td><td class="price">${item.item_price}</td><td class="quantity">${item.quantity}</td><td><i id=${item.id} class="glyphicon glyphicon-remove"></i></td></tr>`);
@@ -238,6 +248,8 @@ $(document)
           removeFromCart(e);
         })
 
+        // Removes an item from the cart when the user clicks on the
+        // x inside of the cart
         function removeFromCart(e) {
             let itemIndex = null;
             order.forEach((item) => {
@@ -251,12 +263,22 @@ $(document)
         });
       };
 
+      // Redirects to the order_pay page on click if there are items
+      // in the cart.  If the cart is empty is triggers the cart
+      // modal and notifies the user that the cart is empty
       $(".scheduleDelivery").click((event) => {
         if (order.length !== 0) {
           window.location.href = 'orders/order_pay';
         } else {
           $('.emptyCart-modal-lg').modal('show');
         }
+      });
+
+      // Monitors the window width and adjusts brand text in navbar
+      // to allow the cart to stay in the nav without  stacking
+      // even on mobile devices
+      $(window).resize(function() {
+        $(window).width() < 500 ? $("#brand").text(`BWWMC?`) : $("#brand").text(`Bow Wow Where's My Chow?`);
       });
 
     });//End of document ready

@@ -65,6 +65,12 @@ p {
   margin-bottom: 40px;
 }
 
+.container {
+  width: 100vw;
+  padding: 0px;
+  margin: 0px;
+}
+
 .glyphicon {
   color: black;
   font-size: 30px;
@@ -93,6 +99,7 @@ p {
 .menu {
   margin-top: 30px;
   margin-bottom: 30px;
+  padding: 40px;
 }
 
 .menuItem {
@@ -123,9 +130,14 @@ p {
 }
 
 .target-nav {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  align-items: center;
+  width: 100vw;
+  padding: 10px;
   background-color: #fff;
   box-shadow: 0 -8px 29px 0 rgba(0, 0, 0, 0.5);
-  padding-top: 10px;
 }
 
 .price {
@@ -182,4 +194,7 @@ p {
 #zipError {
   visibility: hidden;
   color: red;
+}
+
+
 }
