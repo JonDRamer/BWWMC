@@ -10,39 +10,46 @@ $(document).ready(() => {
 
     let scrollPercent = (s / (d - c)) * 100;
 
-
+      //Turns the navbar solid white after scrolling begins
       if (scrollPercent > 3) {
         $('nav').addClass('opaque')
       } else {
         $('nav').removeClass('opaque')
       }
 
+      //Fades in the How Does It Work header
       if (scrollPercent > 4) {
-        $('h2').addClass('fadeInDown')
-        $('h2').addClass('showme')
+        $('.howItWorks').addClass('fadeInDown')
+        $('.howItWorks').addClass('showme')
+      } else {
+        $('.howItWorks').removeClass('showme');
+        $('.howItWorks').removeClass('fadeInDown')
       }
 
-      // const scroll = $(window).scrollTop();
-
+      //Fades in the first step in the process
       if (scrollPercent > 7) {
-        $('#step-one').addClass('fadeInLeft')
-        $('#step-one').addClass('showme')
+        $('#step-one').addClass('fadeInLeft');
+        $('#step-one').addClass('showme');
+      } else {
+        $('#step-one').removeClass('fadeInLeft');
+        $('#step-one').removeClass('showme');
       }
-      // const scroll = $(window).scrollTop();
-
+      //Fades in the second step in the process
       if (scrollPercent > 37) {
-        $('#step-two').addClass('fadeInRight')
-        $('#step-two').addClass('showme')
+        $('#step-two').addClass('fadeInRight');
+        $('#step-two').addClass('showme');
+      } else {
+        $('#step-two').removeClass('fadeInRight');
+        $('#step-two').removeClass('showme');
       }
-      // const scroll = $(window).scrollTop();
-
+      //Fades in the third step in the process
       if (scrollPercent > 66) {
-        $('#step-three').addClass('fadeInLeft')
-        $('#step-three').addClass('showme')
+        $('#step-three').addClass('fadeInLeft');
+        $('#step-three').addClass('showme');
+      } else {
+        $('#step-three').removeClass('fadeInLeft');
+        $('#step-three').removeClass('showme');
       }
-
-    console.clear();
-    console.log("Scroll Percentage: ", scrollPercent);
   })
 
 });
