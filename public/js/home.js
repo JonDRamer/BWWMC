@@ -1,13 +1,14 @@
-'use strict';
 $(document).ready(() => {
-  // adds 'opaque' class to the navbar.
-  //
+  'use strict';
 
   $(window).on('scroll', function(){
+    //Gets the current scroll pixel value, the current document height,
+    //and the full window height
     let s = $(window).scrollTop(),
         d = $(document).height(),
         c = $(window).height();
-
+    //Converts scroll value to percentage so that animations are consistent
+    //on all devices
     let scrollPercent = (s / (d - c)) * 100;
 
       //Turns the navbar solid white after scrolling begins
@@ -34,6 +35,7 @@ $(document).ready(() => {
         $('#step-one').removeClass('fadeInLeft');
         $('#step-one').removeClass('showme');
       }
+
       //Fades in the second step in the process
       if (scrollPercent > 37) {
         $('#step-two').addClass('fadeInRight');
@@ -42,8 +44,9 @@ $(document).ready(() => {
         $('#step-two').removeClass('fadeInRight');
         $('#step-two').removeClass('showme');
       }
+      
       //Fades in the third step in the process
-      if (scrollPercent > 66) {
+      if (scrollPercent > 65) {
         $('#step-three').addClass('fadeInLeft');
         $('#step-three').addClass('showme');
       } else {
