@@ -81,6 +81,15 @@ section {
   width: 40vw;
 }
 
+.navbar-brand {
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.nav>li>a {
+  font-size: 20px;
+}
+
 .opaque {
   transition-delay: 0.1s;
   background-color: #fff;
