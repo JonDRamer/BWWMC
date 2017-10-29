@@ -2,6 +2,15 @@ $(document)
     .ready(() => {
         "use strict";
 
+        // Get the initial width of the screen and set the navbar text accordingly
+        $(window).width() < 500 ? $("#brand").text(`BWWMC?`) : $("#brand").text(`Bow Wow Where's My Chow?`);
+
+        //Continuously monitors window width upon resizing and adjusts
+        //the navbar text accordingly
+        $(window).resize(function() {
+          $(window).width() < 500 ? $("#brand").text(`BWWMC?`) : $("#brand").text(`Bow Wow Where's My Chow?`);
+        });
+        
         // Adds quantity property to each item
         let items = JSON.parse(localStorage.items).menuItems;
         items.forEach((item) => {
@@ -277,8 +286,5 @@ $(document)
       // Monitors the window width and adjusts brand text in navbar
       // to allow the cart to stay in the nav without  stacking
       // even on mobile devices
-      $(window).resize(function() {
-        $(window).width() < 500 ? $("#brand").text(`BWWMC?`) : $("#brand").text(`Bow Wow Where's My Chow?`);
-      });
 
     });//End of document ready

@@ -1,4 +1,14 @@
 $(document).ready(function(){
+
+  // Get the initial width of the screen and set the navbar text accordingly
+  $(window).width() < 500 ? $("#brand").text(`BWWMC?`) : $("#brand").text(`Bow Wow Where's My Chow?`);
+
+  //Continuously monitors window width upon resizing and adjusts
+  //the navbar text accordingly
+  $(window).resize(function() {
+    $(window).width() < 500 ? $("#brand").text(`BWWMC?`) : $("#brand").text(`Bow Wow Where's My Chow?`);
+  });
+
   //Grab cart information from order and store it locally
   let order = localStorage.cart === undefined ? [] : (localStorage.cart === "undefined" ? [] : JSON.parse(localStorage.cart));
 

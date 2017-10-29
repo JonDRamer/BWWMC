@@ -1,6 +1,15 @@
 $(document).ready(() => {
   'use strict';
 
+  // Get the initial width of the screen and set the navbar text accordingly
+  $(window).width() < 500 ? $(".navbar-brand").text(`BWWMC?`) : $(".navbar-brand").text(`Bow Wow Where's My Chow?`);
+
+  //Continuously monitors window width upon resizing and adjusts
+  //the navbar text accordingly
+  $(window).resize(function() {
+    $(window).width() < 500 ? $(".navbar-brand").text(`BWWMC?`) : $(".navbar-brand").text(`Bow Wow Where's My Chow?`);
+  });
+
   $(window).on('scroll', function(){
     //Gets the current scroll pixel value, the current document height,
     //and the full window height
@@ -44,7 +53,7 @@ $(document).ready(() => {
         $('#step-two').removeClass('fadeInRight');
         $('#step-two').removeClass('showme');
       }
-      
+
       //Fades in the third step in the process
       if (scrollPercent > 65) {
         $('#step-three').addClass('fadeInLeft');

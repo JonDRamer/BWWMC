@@ -71,6 +71,12 @@ p {
   margin: 0px;
 }
 
+.row {
+  width: 100vw;
+  padding: 0px;
+  margin: 0px;
+}
+
 .glyphicon {
   color: black;
   font-size: 30px;
@@ -136,8 +142,10 @@ p {
   align-items: center;
   width: 100vw;
   padding: 10px;
+  position: fixed;
   background-color: #fff;
   box-shadow: 0 -8px 29px 0 rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 .price {

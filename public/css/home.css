@@ -10,8 +10,7 @@
   Lato, Raleway
 **********/
 
-html, body {
-  height: 100vh;
+body {
   font-family: 'Raleway', sans-serif;
 }
 
@@ -55,6 +54,12 @@ section {
 .container {
   width: 100vw;
   margin: 0px;
+  padding: 0px;
+}
+
+.row {
+  margin: 0px;
+  padding: 0px;
 }
 
 .cover {
