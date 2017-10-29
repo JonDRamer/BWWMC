@@ -39,7 +39,7 @@ exports.seed = function(knex, Promise) {
                     {
                         id: 5,
                         item_name: 'Vegetable Soup',
-                        item_ingredients: ' Sweet potatoes, russet potatoes, celery, carrots, tomatoes, red bell peppers, quinoa, coriander, parsley, basil',
+                        item_ingredients: ' Sweet potatoes, russet potatoes, celery, carrots, tomatoes, red bell peppers, quinoa, coriander, parsley',
                         item_price: '$27.00',
                         image_url: 'http://i.imgur.com/O7xbGqo.jpg'
                     },

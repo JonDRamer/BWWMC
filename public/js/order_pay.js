@@ -98,8 +98,9 @@ $(document).ready(function(){
   let validEmail = false;
   let validAddress = false;
   let validForm = false;
+
   form.submit((event) => {
-    if ($('#name').val().match(/^[A-Z][a-z]+\s[A-Z][a-z]+$/) !== null) {
+    if ($('#name').val().match(/^[A-z]+\s[A-z]+$/) !== null) {
       if ($('#email').val().match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) !== null) {
         if ($('#address').val().match(/^\d+\s[A-z]+\s[A-z]+/) !== null) {
           validForm = true;
