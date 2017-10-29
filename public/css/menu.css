@@ -12,6 +12,10 @@ a:hover {
   color: black;
 }
 
+a:active {
+  text-decoration: none;
+}
+
 body {
   font-family: 'Raleway', sans-serif;
 }
@@ -25,7 +29,6 @@ h4 {
 }
 
 input {
-  margin: 5px;
   height: 40px;
 }
 
