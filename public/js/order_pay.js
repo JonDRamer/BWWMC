@@ -142,7 +142,7 @@ $(document).ready(function(){
     // Name Field Validation
     $('#name').focus((event) => {
       $('#name').keydown((event) => {
-        if ($('#name').val().match(/^[A-Z][a-z]+\s[A-Z][a-z]+$/) === null) {
+        if ($('#name').val().match(/^[A-z]+\s[A-z]+$/) === null) {
           $('#name').css({"border": "1px solid red"});
           $("#nameError").css({"visibility": "visible"});
         } else {
@@ -152,7 +152,7 @@ $(document).ready(function(){
       })
     });
     $('#name').blur((event) => {
-      if ($('#name').val().match(/^[A-Z][a-z]+\s[A-Z][a-z]+$/) === null) {
+      if ($('#name').val().match(/^[A-z]+\s[A-z]+$/) === null) {
         $('#name').css({"border": "1px solid red"});
         $("#nameError").css({"visibility": "visible"});
       }
